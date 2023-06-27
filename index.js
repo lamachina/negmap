@@ -20,7 +20,12 @@ app.post('/double', (req, res) => {
 
 app.post('/search', async (req, res) => {
     const userInputNumber = req.body.number;
-    const browser = await puppeteer.launch();
+    const browser = await puppeteer.launch({
+        headless: 'new',
+        // `headless: true` (default) enables old Headless;
+        // `headless: 'new'` enables new Headless;
+        // `headless: false` enables “headful” mode.
+    });
     const page = await browser.newPage();
     let results = [];
 
