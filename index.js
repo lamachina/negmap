@@ -8,6 +8,9 @@ const urlTemplate = "https://unisat.io/brc20-api-v2/inscriptions/category/text/s
 app.use(cors());
 app.use(express.json());
 
+app.post('/', (res) => {
+    res.json("HELOOOOO");
+});
 app.post('/double', (req, res) => {
     const number = req.body.number;
     const result = number * 2;
